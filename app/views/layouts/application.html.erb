@@ -14,6 +14,6 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
-    <%= console %>
+    <%= console if Rails.env.development? %>
   </body>
 </html>
