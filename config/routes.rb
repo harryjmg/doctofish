@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :reminders
   devise_for :users
   
   get 'public/home'
