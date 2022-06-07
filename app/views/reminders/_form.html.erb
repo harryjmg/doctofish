@@ -23,7 +23,10 @@
 
   <div>
     <%= form.label :reminder_type, style: "display: block" %>
-    <%= form.text_field :reminder_type %>
+    <%= form.label :reminder_type, "Sms" %>
+    <%= form.radio_button :reminder_type, "sms" %>
+    <%= form.label :reminder_type, "Email" %>
+    <%= form.radio_button :reminder_type, "email" %>
   </div>
 
   <div>
