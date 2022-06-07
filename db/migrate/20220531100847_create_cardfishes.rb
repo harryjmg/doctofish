@@ -1,6 +1,6 @@
-class CreateCardfishs < ActiveRecord::Migration[7.0]
+class CreateCardfishes < ActiveRecord::Migration[7.0]
   def change
-    create_table :cardfishs do |t|
+    create_table :cardfishes do |t|
       t.string :name
       t.text :description
       t.string :image

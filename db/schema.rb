@@ -10,11 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_31_101357) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "cardfishs", force: :cascade do |t|
+ActiveRecord::Schema[7.0].define(version: 2022_06_07_093608) do
+  create_table "cardfishes", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.string "image"
@@ -24,12 +21,26 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_31_101357) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "cardfishes_diseases", force: :cascade do |t|
+    t.integer "cardfish_id"
+    t.integer "disease_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "diseases", force: :cascade do |t|
     t.string "name"
-    t.text "descripton"
+    t.text "description"
     t.text "causes"
     t.text "consequences"
     t.text "treatment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "diseases_products", force: :cascade do |t|
+    t.integer "disease_id"
+    t.integer "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -45,9 +56,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_31_101357) do
   create_table "reminders", force: :cascade do |t|
     t.string "name"
     t.datetime "date"
-    t.string "type"
+    t.string "reminder_type"
     t.json "repetition"
-    t.bigint "user_id", null: false
+    t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_reminders_on_user_id"
