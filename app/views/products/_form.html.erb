@@ -12,22 +12,22 @@
   <% end %>
 
   <div class="mb-3">
-    <%= form.label :name, style: "display: block", class: "form-label" %>
+    <%= form.label :name, class: "form-label" %>
     <%= form.text_field :name, class: "form-control" %>
   </div>
 
   <div class="mb-3">
-    <%= form.label :description, style: "display: block", class: "form-label" %>
+    <%= form.label :description, class: "form-label" %>
     <%= form.text_area :description, class: "form-control" %>
   </div>
 
   <div class="mb-3">
-    <%= form.label :affiliation_link, style: "display: block", class: "form-label" %>
+    <%= form.label :affiliation_link, class: "form-label" %>
     <%= form.text_field :affiliation_link, class: "form-control" %>
   </div>
 
   <div class="mb-3">
-    <%= form.label "Associated diseases :", style: "display: block", class: "form-label" %>
+    <%= form.label "Associated diseases :", class: "form-label" %>
     <%= form.collection_check_boxes :disease_ids, Disease.order(:name), :id, :name do |d| %>
       <div class="form-check">
         <%= d.label class: "form-label" %>
