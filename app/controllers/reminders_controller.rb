@@ -21,7 +21,7 @@ class RemindersController < ApplicationController
 
   # POST /reminders or /reminders.json
   def create
-    @reminder = Reminder.new(reminder_params)
+    @reminder = current_user.reminders.new(reminder_params)
 
     respond_to do |format|
       if @reminder.save
@@ -65,6 +65,6 @@ class RemindersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def reminder_params
-      params.require(:reminder).permit(:name, :date, :reminder_type, :repetition, :user_id)
+      params.require(:reminder).permit(:name, :date, :reminder_type, :repetition_recurrence, :repetition_unit)
     end
 end

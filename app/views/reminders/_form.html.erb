@@ -30,13 +30,18 @@
   </div>
 
   <div>
-    <%= form.label :repetition, style: "display: block" %>
-    <%= form.text_field :repetition %>
-  </div>
-
+    <%= form.label :repetition_recurrence, style: "display: block" %>
+    <%= form.number_field :repetition_recurrence %>
+  </div> 
+  
   <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
+    <%= form.label :repetition_unit, style: "display: block" %>
+    <%= form.label :repetition_unit, "Jours" %>
+    <%= form.radio_button :repetition_unit, "Jours" %>
+    <%= form.label :repetition_unit, "Semaines" %>
+    <%= form.radio_button :repetition_unit, "Semaines" %>
+    <%= form.label :repetition_unit, "Mois" %>
+    <%= form.radio_button :repetition_unit, "Mois" %>
   </div>
 
   <div>
