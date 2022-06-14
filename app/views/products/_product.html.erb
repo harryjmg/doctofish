@@ -14,4 +14,15 @@
     <%= product.affiliation_link %>
   </p>
 
+  <p>
+    <strong>Associated diseases:</strong>
+    <% product.diseases.each do |disease| %>
+      <ul>
+        <li>
+          <p><%= disease.name %></p>
+        </li>
+      </ul>
+    <% end %>
+  </p>
+
 </div>

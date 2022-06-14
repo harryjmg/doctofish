@@ -27,6 +27,10 @@
   </div>
 
   <div>
+    <%= form.collection_check_boxes :disease_ids, Disease.order(:name), :id, :name %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>
