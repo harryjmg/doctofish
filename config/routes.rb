@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :diseases, only: [:show]
+  resources :cardfishes, only: [:index, :show]
   resources :products
   resources :reminders
   devise_for :users

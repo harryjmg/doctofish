@@ -1,0 +1,23 @@
+<%= image_tag @disease.image %>
+<h1 class="mt-3 mb-5"><%= @disease.name.titleize %></h1>
+
+<h2>Comment la reconnaître et l’identifier ?</h2>
+<p><%= @disease.description %></p>
+
+<h2>Quelles sont les causes ?</h2>
+<p><%= @disease.causes %></p>
+
+<h2>Quelles sont les conséquences ?</h2>
+<p><%= @disease.consequences %></p>
+
+<h2>Comment la traiter ?</h2>
+<p><%= @disease.treatment %></p>
+
+<% unless @disease.products.empty? %>
+    <h2>Produits suggérés</h2>
+    <ul>
+        <% @disease.products.each do |product| %>
+            <li><%= link_to product.name, product.affiliation_link %></li>
+        <% end %>
+    </ul>
+<% end %>

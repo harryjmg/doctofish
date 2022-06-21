@@ -1,0 +1,21 @@
+
+<%= image_tag @cardfish.image %>
+<h1 class="mt-3 mb-5"><%= @cardfish.name.titleize %></h1>
+
+<h2>Description</h2>
+<p><%= @cardfish.description %></p>
+
+<h2>Maintenance, paramètres et volumes</h2>
+<p><%= @cardfish.maintenance %></p>
+
+<h2>Comportement</h2>
+<p><%= @cardfish.behavior %></p>
+
+<% unless @cardfish.diseases.empty? %>
+    <h2>Maladies</h2>
+    <ul>
+        <% @cardfish.diseases.each do |disease| %>
+            <li><%= link_to disease.symptom, disease %></li>
+        <% end %>
+    </ul>
+<% end %>
