@@ -1,10 +1,10 @@
-<%= link_to cardfish do %>
-    <div class="col">
-        <div class="card" style="width: 18rem;">
+<div class="col">
+    <div class="card" style="width: 18rem;">
+        <%= link_to cardfish do %>
             <%= image_tag cardfish.image, class: "card-img-top" %>
             <div class="card-body">
                 <p class="card-text"><%= cardfish.name.capitalize %></p>
             </div>
-        </div>
+        <% end %>
     </div>
-<% end %>
+</div>
