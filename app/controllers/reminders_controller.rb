@@ -1,5 +1,6 @@
 class RemindersController < ApplicationController
   before_action :set_reminder, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   # GET /reminders or /reminders.json
   def index
