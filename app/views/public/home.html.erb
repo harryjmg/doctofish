@@ -1,0 +1,10 @@
+<%= form_with(url: cardfishes_path, method: :get, data: {turbo_frame: "cardfishes"}, class: "home-search") do |form| %>
+
+    <div class="mb-3">
+        <%= form.text_field :query, placeholder: "🔎   Nom de mon poisson", class: "form-control form-control-lg" %>
+    </div>
+
+    <div class="mb-3">
+        <%= form.submit 'Trouver mon poisson', class: "btn btn-lg btn-primary" %>
+    </div>
+<% end %>

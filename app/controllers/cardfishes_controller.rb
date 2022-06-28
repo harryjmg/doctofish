@@ -2,7 +2,11 @@ class CardfishesController < ApplicationController
   before_action :set_cardfish, only: %i[ show ]
 
   def index
-    @cardfishes = Cardfish.all
+    if params[:query].present?
+      @cardfishes = Cardfish.where("name LIKE ?", "%#{params[:query]}%")
+    else
+      @cardfishes = Cardfish.all
+    end
   end
 
   def show
