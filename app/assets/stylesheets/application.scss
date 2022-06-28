@@ -3,3 +3,15 @@
 form {
     max-width: 400px;
 }
+
+.field_with_errors {
+    input, textarea, select {
+        border-color: red;
+        background: #fff2f2;
+    }
+}
+
+.error_msg {
+    font-size: small;
+    color: red;
+}

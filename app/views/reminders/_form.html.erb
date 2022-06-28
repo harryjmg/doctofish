@@ -1,24 +1,18 @@
 <%= form_with(model: reminder) do |form| %>
-  <% if reminder.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(reminder.errors.count, "error") %> prohibited this reminder from being saved:</h2>
-
-      <ul>
-        <% reminder.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
   <div class="mb-3">
     <%= form.label :name, class: "form-label" %>
     <%= form.text_field :name, class: "form-control" %>
+    <% if reminder.errors[:name].present? %>
+      <p class="error_msg"><%= reminder.errors[:name][0]%></p>
+    <% end %>
   </div>
 
   <div class="mb-3">
     <%= form.label :date, class: "form-label" %>
     <%= form.datetime_field :date, class: "form-control" %>
+    <% if reminder.errors[:date].present? %>
+      <p class="error_msg"><%= reminder.errors[:date][0]%></p>
+    <% end %>
   </div>
 
   <div class="mb-3">
@@ -32,12 +26,19 @@
       <%= form.label :reminder_type, "Email", class: "form-check-label" %>
       <%= form.radio_button :reminder_type, "email", class: "form-check-input" %>
     </div>
+
+    <% if reminder.errors[:reminder_type].present? %>
+      <p class="error_msg"><%= reminder.errors[:reminder_type][0]%></p>
+    <% end %>
   </div>
 
   <div class="mb-3">
     <%= form.label :repetition_recurrence, style: "display: block", class: "form-label" %>
     <%= form.number_field :repetition_recurrence, class: "form-control", style: "width: 30%; display: inline-block;" %>
     <%= form.select :repetition_unit, ["Jours", "Semaines", "Mois"], {}, { class: 'form-select', style: "width: 60%; display: inline-block;" } %>
+    <% if reminder.errors[:repetition_recurrence].present? %>
+      <p class="error_msg"><%= reminder.errors[:repetition_recurrence][0]%></p>
+    <% end %>
   </div>
 
   <div class="mb-3">
