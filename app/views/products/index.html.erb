@@ -1,14 +1,27 @@
-<p style="color: green"><%= notice %></p>
-
 <h1>Products</h1>
 
-<div id="products">
-  <% @products.each do |product| %>
-    <%= render product %>
-    <p>
-      <%= link_to "Show this product", product %>
-    </p>
-  <% end %>
-</div>
+<div class="segment">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nom</th>
+        <th scope="col">Lien</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <td><%= link_to product.name, product %></td>
+          <td><%= product.affiliation_link %></td>
+          <td><%= link_to "Modifier", edit_product_path(product), class: "btn btn-sm btn-secondary" %></td>
+          <td><%= button_to "Supprimer", product, method: :delete, class: "btn btn-sm btn-danger" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to "New product", new_product_path %>
+  
+  <%= link_to "New product", new_product_path, class: "btn btn-primary", style: "margin-top: 2rem;" %>
+
+</div>

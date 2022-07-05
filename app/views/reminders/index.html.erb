@@ -1,14 +1,25 @@
-<p style="color: green"><%= notice %></p>
-
 <h1>Reminders</h1>
 
-<div id="reminders">
-  <% @reminders.each do |reminder| %>
-    <%= render reminder %>
-    <p>
-      <%= link_to "Show this reminder", reminder %>
-    </p>
-  <% end %>
-</div>
+<div class="segment">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Tâche</th>
+        <th scope="col">Temps restant</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @reminders.each do |reminder| %>
+        <tr>
+          <td><%= link_to reminder.name, reminder %></td>
+          <td><%= reminder.date %></td>
+          <td><%= link_to "Modifier", edit_reminder_path(reminder), class: "btn btn-sm btn-secondary" %></td>
+          <td><%= button_to "Supprimer", reminder, method: :delete, class: "btn btn-sm btn-danger" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to "New reminder", new_reminder_path %>
+  <%= link_to "New reminder", new_reminder_path, class: "btn btn-primary", style: "margin-top: 2rem;" %>
+</div>

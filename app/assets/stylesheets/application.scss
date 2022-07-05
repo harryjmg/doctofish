@@ -1,11 +1,13 @@
 $primary: #186f82;
 $secondary: #92B4F4;
 $danger: #db8a74;
+$info: #156d81;
 
 $theme-colors: (
     "primary": $primary,
     "secondary": $secondary,
-    "danger": $danger
+    "danger": $danger,
+    "info": $info
 );
     
 @import "bootstrap";
@@ -49,4 +51,16 @@ body {
         display: flex;
         align-items: center;
     }
+}
+
+.segment {
+    background: white;
+    padding: 2em;
+    border-radius: 20px;
+    margin: 0 60px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.16);
+}
+
+h1 {
+    margin: 2rem;
 }

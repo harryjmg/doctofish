@@ -1,10 +1,17 @@
-<p style="color: green"><%= notice %></p>
+<h1>Tâche : <%= @reminder.name %></h1>
 
-<%= render @reminder %>
+<div class="segment">
+  <h5>Type de rappel :</h5>
+  <p><%= @reminder.reminder_type %></p>
 
-<div>
-  <%= link_to "Edit this reminder", edit_reminder_path(@reminder) %> |
-  <%= link_to "Back to reminders", reminders_path %>
+  <h5>Type et fréquence de répétition :</h5>
+  <p><%= @reminder.repetition_recurrence %> <%= @reminder.repetition_unit %></p>
+  
+  <div>
+    <%= link_to "Edit this reminder", edit_reminder_path(@reminder), class: "btn btn-secondary btn-sm" %>
+    <%= button_to "Destroy this reminder", @reminder, method: :delete, class: "btn btn-danger btn-sm mt-2" %>
+    <br>
+    <%= link_to "Back to reminders", reminders_path %>
+  </div>
 
-  <%= button_to "Destroy this reminder", @reminder, method: :delete %>
 </div>

@@ -1,10 +1,24 @@
-<p style="color: green"><%= notice %></p>
+<h1>Produit : <%= @product.name %></h1>
 
-<%= render @product %>
+<div class="segment">
+  <h5>Description :</h5>
+  <p><%= @product.description %></p>
 
-<div>
-  <%= link_to "Edit this product", edit_product_path(@product) %> |
-  <%= link_to "Back to products", products_path %>
+  <h5>Liste des maladies :</h5>
+  <ul>
+    <% @product.diseases.each do |disease| %>
+      <li><%= disease.name %></li>
+    <% end %>
+  </ul>
 
-  <%= button_to "Destroy this product", @product, method: :delete %>
+  <h5>Lien affilié :</h5>
+  <p><%= @product.affiliation_link %></p>
+  
+  <div>
+    <%= link_to "Edit this product", edit_product_path(@product), class: "btn btn-secondary btn-sm" %>
+    <%= button_to "Destroy this product", @product, method: :delete, class: "btn btn-danger btn-sm mt-2" %>
+    <br>
+    <%= link_to "Back to products", products_path %>
+  </div>
+
 </div>
