@@ -10,8 +10,7 @@ body {
 
 .home-starproduct {
     height: 400px;
-    background: white;
-    border-bottom: 1px solid #1b7185;
+    background: #015872;
 }
 
 .ocean { 
@@ -56,3 +55,7 @@ body {
       transform: translate3d(0,5px,0);
     }
   }
+
+  footer {
+    background: #015872;
+}

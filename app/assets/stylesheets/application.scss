@@ -2,12 +2,18 @@ $primary: #186f82;
 $secondary: #92B4F4;
 $danger: #db8a74;
 $info: #156d81;
+$light: #fffeea;;
+$success: #5cb85c;
+$muted: #8c8c8c;
 
 $theme-colors: (
     "primary": $primary,
     "secondary": $secondary,
     "danger": $danger,
-    "info": $info
+    "info": $info,
+    "light": $light,
+    "success": $success,
+    "muted": $muted
 );
     
 @import "bootstrap";
