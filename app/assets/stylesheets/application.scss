@@ -18,6 +18,14 @@ $theme-colors: (
     
 @import "bootstrap";
 
+.cardfish {
+    img {
+        width: 100%;
+        height: 198px;
+        object-fit: cover;
+    }
+}
+
 form {
     max-width: 400px;
 }
