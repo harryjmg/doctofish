@@ -5,7 +5,7 @@ class CardfishesController < ApplicationController
     if params[:query].present?
       @cardfishes = Cardfish.where("name LIKE ?", "%#{params[:query]}%")
     else
-      @cardfishes = Cardfish.all
+      @cardfishes = Cardfish.all.paginate(page: params[:page])
     end
   end
 

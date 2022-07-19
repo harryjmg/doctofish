@@ -4,4 +4,7 @@
     <% @cardfishes.each do |cardfish| %>
         <%= render cardfish %>
     <% end %>
+    <div class="apple_pagination">
+        <%= will_paginate @cardfishes %>
+    </div>
 </div>

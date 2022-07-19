@@ -18,6 +18,8 @@ gem 'bootstrap'
 gem 'sassc-rails'
 
 gem 'devise'
+gem "will_paginate"
+gem 'will_paginate-bootstrap-style'
 
 group :development, :test do
   gem "sqlite3"
