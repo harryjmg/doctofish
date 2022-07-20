@@ -15,11 +15,11 @@
         <% if current_user %>
           <div class="dropdown text-end">
             <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false" spellcheck="false">
-              <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+              <%= image_tag @user.gravatar_url, class:"rounded-circle", size: "32" %>
             </a>
             <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" style="">
-              <li><%= link_to "Mes rappels", "#", class: "dropdown-item" %></li>
-              <li><%= link_to "Mon profil", "#", class: "dropdown-item" %></li>
+              <li><%= link_to "Mes rappels", reminders_path , class: "dropdown-item" %></li>
+              <li><%= link_to "Mon profil", edit_user_registration_path, class: "dropdown-item" %></li>
               <li><hr class="dropdown-divider"></li>
               <li><%= button_to( "Se déconnecter", destroy_user_session_path, class: "dropdown-item", method: :delete ) %></li>
             </ul>
