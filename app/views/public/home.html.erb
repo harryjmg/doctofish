@@ -16,8 +16,10 @@
 </div>
 
 <div class="home-starproduct">
-    <%= link_to @starproduct.url do %>
-        <%= image_tag @starproduct.image, class: "starproduct" %>
+    <% unless @starproduct.nil? %>
+        <%= link_to @starproduct.url do %>
+            <%= image_tag @starproduct.image, class: "starproduct" %>
+        <% end %>
     <% end %>
 </div>
 
