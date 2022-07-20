@@ -1,0 +1,2 @@
+class StarProduct < ApplicationRecord
+end

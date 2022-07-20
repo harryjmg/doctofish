@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_20_083211) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_20_101612) do
   create_table "cardfishes", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -68,6 +68,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_20_083211) do
     t.string "repetition_unit"
     t.datetime "next_occurence"
     t.index ["user_id"], name: "index_reminders_on_user_id"
+  end
+
+  create_table "star_products", force: :cascade do |t|
+    t.string "name"
+    t.string "url"
+    t.string "image"
+    t.boolean "is_on_home_page"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

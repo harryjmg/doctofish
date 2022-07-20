@@ -11,6 +11,11 @@ body {
 .home-starproduct {
     height: 400px;
     background: #015872;
+    text-align: center;
+    .starproduct {
+        width: 300px;
+        margin-top: 6rem;
+    }
 }
 
 .ocean { 

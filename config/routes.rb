@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :star_products
   resources :diseases, only: [:show]
   resources :cardfishes, only: [:index, :show]
   resources :products
