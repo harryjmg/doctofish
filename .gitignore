@@ -32,3 +32,5 @@
 
 db/development.sqlite3
 .byebug_history
+
+.env

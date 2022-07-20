@@ -23,11 +23,11 @@ class Reminder < ApplicationRecord
   
   def send_reminder
     puts "Sending reminder to #{self.user.email}"
-    # if self.reminder_type == "email"
-    #   UserMailer.reminder_email(self).deliver_now
-    # elsif self.reminder_type == "sms"
-    #   UserMailer.reminder_sms(self).deliver_now
-    # end
+    if self.reminder_type == "email"
+      UserMailer.reminder_email(self).deliver_now
+    elsif self.reminder_type == "sms"
+      UserMailer.reminder_sms(self).deliver_now
+    end
   end
 
 end
