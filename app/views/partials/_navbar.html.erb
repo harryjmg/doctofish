@@ -9,7 +9,7 @@
           <li><%= link_to "Doctofish", root_path, class: "nav-link px-2 link-primary website-title" %></li>
           <li><%= link_to "À propos", "#", class: "nav-link px-2 link-dark" %></li>
           <li><%= link_to "Fishothèque", cardfishes_path, class: "nav-link px-2 link-dark" %></li>
-          <% if current_user.is_admin %>
+          <% if current_user && current_user.is_admin %>
             <li><%= link_to "Produit phare", star_products_path, class: "nav-link px-2 link-dark" %></li>
           <% end %>
         </ul>
