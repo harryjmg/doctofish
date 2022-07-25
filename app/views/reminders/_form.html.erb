@@ -1,6 +1,6 @@
 <%= form_with(model: reminder) do |form| %>
   <div class="mb-3">
-    <%= form.label :name, class: "form-label" %>
+    <%= form.label "Nom du rappel", class: "form-label" %>
     <%= form.text_field :name, class: "form-control" %>
     <% if reminder.errors[:name].present? %>
       <p class="error_msg"><%= reminder.errors[:name][0]%></p>
@@ -16,7 +16,7 @@
   </div>
 
   <div class="mb-3">
-    <%= form.label :reminder_type, style: "display: block", class: "form-label" %>
+    <%= form.label "Type de rappel", style: "display: block", class: "form-label" %>
     <div class="form-check form-check-inline">
       <%= form.label :reminder_type, "Sms", class: "form-check-label" %>
       <%= form.radio_button :reminder_type, "sms", class: "form-check-input" %>
@@ -33,7 +33,7 @@
   </div>
 
   <div class="mb-3">
-    <%= form.label :repetition_recurrence, style: "display: block", class: "form-label" %>
+    <%= form.label "Récurrence", style: "display: block", class: "form-label" %>
     <%= form.number_field :repetition_recurrence, class: "form-control", style: "width: 30%; display: inline-block;" %>
     <%= form.select :repetition_unit, ["Jours", "Semaines", "Mois"], {}, { class: 'form-select', style: "width: 60%; display: inline-block;" } %>
     <% if reminder.errors[:repetition_recurrence].present? %>
@@ -42,6 +42,6 @@
   </div>
 
   <div class="mb-3">
-    <%= form.submit "Add the reminder", class: "btn btn-primary"%>
+    <%= form.submit "Ajouter le rappel", class: "btn btn-primary"%>
   </div>
 <% end %>

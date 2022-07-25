@@ -24,6 +24,7 @@ gem "will_paginate"
 gem 'will_paginate-bootstrap-style'
 
 gem 'gravtastic'
+gem 'rails-i18n'
 
 group :development, :test do
   gem "sqlite3"

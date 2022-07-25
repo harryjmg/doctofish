@@ -18,5 +18,10 @@ module Doctofish
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    
+    # Set locales to use and default to fr_FR
+    config.i18n.available_locales = [:fr]
+    config.i18n.default_locale = :fr
+
   end
 end
